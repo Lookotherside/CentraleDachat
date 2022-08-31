@@ -12,7 +12,7 @@ import lombok.Data;
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String title;
     private String content;
@@ -24,17 +24,17 @@ public class Blog {
         this.setContent(content);
     }
 
-    public Blog(int id, String title, String content) {
+    public Blog(Long id, String title, String content) {
         this.setId(id);
         this.setTitle(title);
         this.setContent(content);
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

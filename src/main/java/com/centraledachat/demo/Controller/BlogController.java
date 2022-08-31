@@ -25,9 +25,8 @@ public class BlogController {
     }
 
     @GetMapping("/blog/{id}")
-    public Optional<Blog> show(@PathVariable String id){
-        int blogId = Integer.parseInt(id);
-        return blogService.getBlog((long) blogId);
+    public Optional<Blog> show(@PathVariable("id") long id){
+        return blogService.getBlog(id);
     }
 
 	
