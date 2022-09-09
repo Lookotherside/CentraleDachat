@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cours Java Home</title>
+    <link href="/css/partials/partials.css" rel="stylesheet" />
+    <link href="/css/layout/layout.css" rel="stylesheet" />
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  
+</head>
+<body>
+   
+   <!-- 
+    <h1>Coucou</h1>
+    <table border="1">
+            <tr>
+               <th>Titre</th>
+               <th>Description</th>
+            </tr>
+            <tr th:each="el: ${blog}">
+               <td th:utext="${el.title}">...</td>
+               <td th:utext="${el.content}">...</td>
+            </tr>
+         </table> -->
+         
+         <div id="home">
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title">Centrale<span> d'achat</span></h1>
+                    <p>
+                        <strong>Bienvenue</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="row btn-container">
+                <div class="col-md-6"><a href="/login" class="btn btn-block bg-red">Connexion</a></div>
+                <div class="col-md-6"><a href="/signup" class="btn btn-block bg-blue">Inscription</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+   <script src="/lib/jquery/jquery-3.5.0.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

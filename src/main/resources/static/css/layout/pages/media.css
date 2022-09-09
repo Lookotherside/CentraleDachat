@@ -1,0 +1,105 @@
+/**********
+* Home page rules
+**********/
+
+.media-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.media-list .item {
+    flex-basis: 24%;
+    margin: 4px;
+
+    background: #1f1f1f;
+
+    padding-bottom: 25px;
+}
+
+.media-list .item .video {
+    width: 100%;
+}
+
+.media-list .item .video iframe {
+    width: 100%;
+}
+
+.media-list .item .title {
+    color: #fff;
+    font-weight: bold;
+
+    padding: 8px 20px;
+    text-align: center;
+}
+.media-list .item .title:after {
+    content: "";
+    display: block;
+    width: 20px;
+
+    border-bottom: 1px solid var(--color-red);
+    margin: 10px auto 0 auto;
+}
+
+.media-list .item:hover {
+    text-decoration: none;
+}
+
+.media-list .item .summary {
+    color: #fff;
+    padding: 8px 20px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .media-list .item {
+        flex-basis: 100%;
+    }
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    padding-bottom: 1rem;
+
+}
+
+.card > :last-child {
+    margin-bottom: 0;
+}
+
+.card h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+}
+
+img ~ * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.card-wrapper{
+    padding: 2.9rem!important;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}

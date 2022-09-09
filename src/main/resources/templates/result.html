@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cours Java Home</title>
+    <link href="/css/partials/partials.css" rel="stylesheet" />
+    <link href="/css/layout/layout.css" rel="stylesheet" />
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  
+</head>
+<body>
+
+<h1>Result</h1>
+<p th:text="'nom: ' + ${employe.Nom}" />
+<p th:text="'Prénom: ' + ${employe.Prenom}" />
+<p th:text="'Email: ' + ${employe.Email}" />
+<p th:text="'Mot de passe: ' + ${employe.Mot_de_Passe}" />
+<p th:text="'Confirmation du mot de passe: ' + ${employe.passwordConfirm}" />
+<p th:text="'Role: ' + ${employe.role}" />
+   <script src="/lib/jquery/jquery-3.5.0.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
