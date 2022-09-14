@@ -36,64 +36,39 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Editer un fournisseur</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Ajouter un produit</h1>
                             </div>
-                            <form th:object="${it}" th:action="@{/editFournisseur}" method="POST" class="user">
+                            <form th:object="${userForm}" th:action="@{/addProductFournisseur}" method="POST" class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                    	<input  th:field="*{Id_Fournisseur}"  type="hidden" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Id_Fournisseur">
-                                        <input  th:field="*{societe}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="societe">
-                                            <span class="has-error" th:if="${#fields.hasErrors('societe')}" th:errors="*{societe}"></span>
+                                        <input  th:field="*{titre}"  type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="titre">
+                                            
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  th:field="*{statut}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="statut">
+                                        <input  th:field="*{description}"  type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="description">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  th:field="*{Nom}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="nom">
-                                            <span class="has-error" th:if="${#fields.hasErrors('Nom')}" th:errors="*{Nom}"></span>
+                                        <select  th:field="*{categorie}"  type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="categorie">
+                                            <option th:each="it : ${it}" th:utext="${it.nom}" value="1"></option>
+                                        </select>
+                                            
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  th:field="*{Prenom}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="prenom">
-                                            <span class="has-error" th:if="${#fields.hasErrors('Prenom')}" th:errors="*{Prenom}"></span>
+                                        <input  th:field="*{url}"  type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="url">
+                                          
                                     </div>
-                                    <!-- <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="email" th:field="*{Email}" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="email">
-                                            <span class="has-error" th:if="${#fields.hasErrors('Email')}" th:errors="*{Email}"></span>
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  th:field="*{Adresse}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="adresse">
-                                    </div> -->
+                                    
                                     <!-- <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="date" th:field="*{DateAdhesion}" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder="date d'adhésion">
                                     </div> -->
-                                   <!--  <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  th:field="*{statut}"  type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="statut">
-                                    </div>  -->                                  
+                                                                   
                                 </div>                               						    
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input th:field="*{password}" type="password"  class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                             <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input th:field="*{passwordConfirm}" type="password"  class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                            <span class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}"></span>
-                                    </div>
-                                </div>
-                                <!-- <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </a> -->
+                               
                                
                                 <button class="btn btn-primary btn-user btn-block" type="submit">Submit</button>
                                 

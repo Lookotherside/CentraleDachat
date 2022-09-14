@@ -1,11 +1,13 @@
 package com.centraledachat.demo.Model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -37,6 +39,9 @@ public class Fournisseur {
 
     @Transient
     private String passwordConfirm;
+    
+    @ManyToMany
+    private Set<Role> roles;
 
 	public Fournisseur(String name, String surname, String email2) {
 		this.Nom = name;
@@ -143,4 +148,12 @@ public class Fournisseur {
 	public void setId_Fournisseur(Long id_Fournisseur) {
 		Id_Fournisseur = id_Fournisseur;
 	}
+	
+	public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

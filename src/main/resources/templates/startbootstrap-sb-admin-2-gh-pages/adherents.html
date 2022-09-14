@@ -36,7 +36,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -375,11 +376,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Fournisseurs</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Adhérents</h1>
                     <div class="col-auto ml-auto d-print-none">
 					<div style="text-align: end;">
 						<div>
-							<a class="btn btn btn-sm btn-success btn-icon-text" href="/addFournisseur"><i class="ti-plus btn-icon-prepend"> </i>	Ajouter un Fournisseur</a>
+							<a class="btn btn btn-sm btn-success btn-icon-text" href="/addAdherent"><i class="ti-plus btn-icon-prepend"> </i>	Ajouter un adhérent</a>
 						</div>
 						</div>
 					</div>
@@ -387,7 +388,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des fournisseurs</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des adherents</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -396,8 +397,8 @@
                                         <tr>
                                             <th>Société</th>
                                             <th>Statut</th>s
-                                            <th>Nom du contact</th>
-                                            <th>Prénom du contact</th>                                 
+                                            <th>Nom </th>
+                                            <th>Prénom </th>                                 
                                             <td class="btn-list flex-nowrap">Actions</td>
                                             <!-- <th>Age</th>
                                             <th>Start date</th>
@@ -423,8 +424,7 @@
                                             <td th:utext="${it.statut}"></td>
                                             <td th:utext="${it.Nom}"></td>
                                             <td th:utext="${it.Prenom}"></td>
-                                            <td><a th:href="@{/editFournisseur(id=${it.Id_Fournisseur})}"><button type="button" class="btn btn-sm btn-primary btn-rounded btn-fw">Modifier</button></a>  <a th:href="@{/deleteFournisseur(id=${it.Id_Fournisseur})}" ><button type="button" class="btn btn-sm btn-danger btn-rounded btn-fw">Supprimer</button></a></td>
-                                            <form id="deleteForm" method="POST" th:action="@{/deleteFournisseur?id=2}"></form>
+                                            <td><a th:href="@{/editAdherent(id=${it.id_Adherent})}"><button type="button" class="btn btn-sm btn-primary btn-rounded btn-fw">Modifier</button></a>  <a th:href="@{/deleteAdherent(id=${it.id_Adherent})}" ><button type="button" class="btn btn-sm btn-danger btn-rounded btn-fw">Supprimer</button></a></td>
                                             <!-- <a th:href="@{${baseUrl}(id=${order.id})}">...</a> -->
                                             <!-- <td>61</td>
                                             <td>2011/04/25</td>
@@ -894,7 +894,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Your Website 2022</span>
                     </div>
                 </div>
             </footer>

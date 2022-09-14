@@ -2,6 +2,8 @@ package com.centraledachat.demo.Service;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +35,12 @@ public class FournisseurService {
 		fr.save(fournisseur);
 	}
 	
-	public void editFournisseur(Fournisseur fournisseur) {
-		
+	public Fournisseur editFournisseur(Fournisseur fournisseur) {
+		if (fournisseur.getId_Fournisseur() != null && !fr.existsById(fournisseur.getId_Fournisseur())) {
+			throw new EntityNotFoundException("There is no entity with such ID in the database.");
+		}
+ 
+		return fr.save(fournisseur);
 	}
 
 }

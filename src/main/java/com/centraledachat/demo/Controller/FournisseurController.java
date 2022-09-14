@@ -8,17 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.centraledachat.demo.Model.Blog;
 import com.centraledachat.demo.Model.Fournisseur;
 import com.centraledachat.demo.Model.User;
 import com.centraledachat.demo.Service.FournisseurService;
 import com.centraledachat.demo.Service.FournisseurValidator;
-import com.centraledachat.demo.Service.UserService;
-import com.centraledachat.demo.Service.UserValidator;
 
 @Controller
 public class FournisseurController {
@@ -57,7 +53,7 @@ public class FournisseurController {
 		 Iterable<Fournisseur> it = fs.getAllFournisseurs();
 	        model.addAttribute("it", it);
 		
-        return "startbootstrap-sb-admin-2-gh-pages/tables.html";
+        return "redirect:/fournisseurs";
     }
 	
 	@GetMapping("/editFournisseur")
@@ -67,7 +63,7 @@ public class FournisseurController {
 		Optional<Fournisseur> it = fs.getFournisseur(id);
 		System.out.println(it.get().getSociete());
 		model.addAttribute("it", it);
-		model.addAttribute("userForm", new Fournisseur());
+		/* model.addAttribute("userForm", new Fournisseur()); */
         return "startbootstrap-sb-admin-2-gh-pages/editFournisseur.html";
     }
 	
@@ -77,7 +73,7 @@ public class FournisseurController {
 		if (bindingResult.hasErrors()) {
             return "startbootstrap-sb-admin-2-gh-pages/addFournisseur.html";
         }
-		fs.insertFournisseur(userForm);
+		fs.editFournisseur(userForm);
 		
         return "redirect:/fournisseurs";
     }
@@ -86,10 +82,6 @@ public class FournisseurController {
     public String deleteFournisseurs(@RequestParam(value = "id", required = false) Long id,@ModelAttribute("userForm") Fournisseur userForm, BindingResult bindingResult, Model model) {
 		
 		fs.deleteFournisseur(id);
-		/*
-		 * Iterable<Fournisseur> it = fs.getAllFournisseurs(); model.addAttribute("it",
-		 * it);
-		 */
 		
         return "redirect:/fournisseurs";
     }
